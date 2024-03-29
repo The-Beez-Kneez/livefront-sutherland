@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function App() {
+const GenreFinder = () => {
+  const [genre, setGenre] = useState(null);
+  const [story, setStory] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let source = axios.CancelToken.source();
+
+    const fetchData = async () => {
+      try {
+        const [genreResponse, storyResponse] = await Promise.all([
+          axios.get('https://binaryjazz.us/wp-json/genrenator/v1/genre/', { cancelToken: source.token }),
+          axios.get('https://binaryjazz.us/wp-json/genrenator/v1/story/', { cancelToken: source.token })
+        ]);
+
+        setGenre(genreResponse.data);
+        setStory(storyResponse.data);
+        setLoading(false);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log('Request canceled', error.message);
+        } else {
+          setError(error);
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      if (source) {
+        source.cancel('Component unmounted');
+      }
+    };
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hi World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Generated Genre:</h1>
+      <p>{genre}</p>
+      <h1>Generated Story:</h1>
+      <p>{story}</p>
     </div>
   );
-}
+};
 
-export default App;
+export default GenreFinder;
