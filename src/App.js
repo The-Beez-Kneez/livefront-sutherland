@@ -24,7 +24,7 @@ const GenreFinder = () => {
         setLoading(false);
       } catch (error) {
         if (isCancel(error)) {
-          console.log('Request canceled', error.message);
+          return error.message
         } else {
           setError(error);
           setLoading(false);
