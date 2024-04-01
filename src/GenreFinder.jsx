@@ -48,9 +48,9 @@ const GenreFinder = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<div>
-          <h1>Generated Genre:</h1>
-          <p>{genre}</p>
-          <a href="/story-detail">View Story Detail</a>
+          <h1>How About We Listen To:</h1>
+          <p>{genre}?</p>
+          <a href="/story-detail">What do you think?</a>
         </div>} />
         <Route path="/story-detail" element={<StoryDetail story={story} />} />
       </Routes>
