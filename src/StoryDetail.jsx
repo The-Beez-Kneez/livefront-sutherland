@@ -1,10 +1,12 @@
+// StoryDetail.jsx
 import React from 'react';
+import './StoryDetail.css'; // Import CSS file for styling
 
 const StoryDetail = ({ story }) => {
   return (
-    <div>
-      <h1>I think</h1>
-      <div>{story}</div>
+    <div className="story-detail-container">
+      <h1 className="story-title">Story Detail</h1>
+      <div className="story-content">{story}</div>
     </div>
   );
 };

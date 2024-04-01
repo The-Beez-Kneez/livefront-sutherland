@@ -1,8 +1,9 @@
 // GenreFinder.jsx
 import React, { useState, useEffect } from 'react';
 import axios, { isCancel } from 'axios';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import StoryDetail from './StoryDetail';
+import './GenreFinder.css'; // Import CSS file for styling
 
 const GenreFinder = () => {
   const [genre, setGenre] = useState(null);
@@ -41,16 +42,16 @@ const GenreFinder = () => {
     };
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">Error: {error.message}</div>;
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<div>
-          <h1>How About We Listen To:</h1>
-          <p>{genre}?</p>
-          <a href="/story-detail">What do you think?</a>
+        <Route exact path="/" element={<div className="container">
+          <h1 className="title">How About We Listen To:</h1>
+          <p className="genre">{genre}?</p>
+          <Link to="/story-detail" className="link">What do you think?</Link>
         </div>} />
         <Route path="/story-detail" element={<StoryDetail story={story} />} />
       </Routes>

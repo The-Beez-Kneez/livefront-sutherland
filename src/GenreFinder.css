@@ -1,0 +1,55 @@
+/* GenreFinder.css */
+body {
+  background-color: #2B1B34; /* Dark Plum */
+  color: #FFFFFF; /* White */
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #C8A2C8; /* Light Plum */
+}
+
+.genre {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #A681A6; /* Medium Plum */
+}
+
+.link {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF; /* White */
+  background-color: #7C5295; /* Darker Plum */
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover {
+  background-color: #5E3B6B; /* Darkest Plum */
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.error {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.purple-accent {
+  color: #7C5295; /* Darker Plum */
+}

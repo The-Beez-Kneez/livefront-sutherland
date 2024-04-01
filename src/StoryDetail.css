@@ -1,0 +1,17 @@
+/* StoryDetail.css */
+.story-detail-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.story-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #C8A2C8; /* Light Plum */
+}
+
+.story-content {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #A681A6; /* Medium Plum */
+}
