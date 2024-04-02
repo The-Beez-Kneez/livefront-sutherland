@@ -1,7 +1,7 @@
 ```markdown
-# Livefront Sutherland Project
+# Music Snob
 
-Welcome to the Livefront Sutherland project! This project is a React application that allows users to explore different genres and read random stories associated with those genres.
+Welcome to Music Snob! This project is a React application that allows users to explore different genres and read random stories associated with those genres.
 
 ## Features
 
