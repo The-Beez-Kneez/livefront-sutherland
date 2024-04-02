@@ -1,45 +1,30 @@
-// GenreFinder.jsx
 import React, { useState, useEffect } from 'react';
-import axios, { isCancel } from 'axios';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import StoryDetail from './StoryDetail';
-import './GenreFinder.css'; // Import CSS file for styling
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-router-dom';
+import StoryDetail from "./StoryDetail";
+import './GenreFinder.css'; 
 
 const GenreFinder = () => {
-  const [genre, setGenre] = useState(null);
-  const [story, setStory] = useState(null);
+  const [genres, setGenres] = useState([]);
+  const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  let cancelTokenSource;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        cancelTokenSource = axios.CancelToken.source();
-        const [genreResponse, storyResponse] = await Promise.all([
-          axios.get('https://binaryjazz.us/wp-json/genrenator/v1/genre/', { cancelToken: cancelTokenSource.token }),
-          axios.get('https://binaryjazz.us/wp-json/genrenator/v1/story/', { cancelToken: cancelTokenSource.token })
-        ]);
-        setGenre(genreResponse.data);
-        setStory(storyResponse.data);
+        const genreResponse = await axios.get('https://binaryjazz.us/wp-json/genrenator/v1/genre/25/');
+        const storyResponse = await axios.get('https://binaryjazz.us/wp-json/genrenator/v1/story/25');
+        setGenres(genreResponse.data);
+        setStories(storyResponse.data);
         setLoading(false);
       } catch (error) {
-        if (isCancel(error)) {
-          console.log('Request cancelled:', error.message);
-        } else {
-          setError(error);
-          setLoading(false);
-        }
+        setError(error);
+        setLoading(false);
       }
     };
 
     fetchData();
-
-    return () => {
-      if (cancelTokenSource) {
-        cancelTokenSource.cancel('Component unmounted');
-      }
-    };
   }, []);
 
   if (loading) return <div className="loading">Loading...</div>;
@@ -49,11 +34,16 @@ const GenreFinder = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<div className="container">
-          <h1 className="title">How About We Listen To:</h1>
-          <p className="genre">{genre}?</p>
-          <Link to="/story-detail" className="link">What do you think?</Link>
+          <h1 className="title">Choose a Genre:</h1>
+          <ul className="genre-list">
+            {genres.map((genre, index) => (
+              <li key={index} className="genre-item">
+                <Link to={`/story-detail/${genre}`} className="link">{genre}</Link>
+              </li>
+            ))}
+          </ul>
         </div>} />
-        <Route path="/story-detail" element={<StoryDetail story={story} />} />
+        <Route path="/story-detail/:genre" element={<StoryDetail stories={stories} />} />
       </Routes>
     </Router>
   );

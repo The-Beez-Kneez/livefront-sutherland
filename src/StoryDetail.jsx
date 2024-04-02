@@ -1,12 +1,16 @@
-// StoryDetail.jsx
 import React from 'react';
-import './StoryDetail.css'; // Import CSS file for styling
+import './StoryDetail.css';
 
-const StoryDetail = ({ story }) => {
+const StoryDetail = ({ stories }) => {
+
+  console.log(stories);
+
+  const randomStory = stories[Math.floor(Math.random() * stories.length)];
+
   return (
     <div className="story-detail-container">
       <h1 className="story-title">Story Detail</h1>
-      <div className="story-content">{story}</div>
+      <div className="story-content">{randomStory}</div>
     </div>
   );
 };
