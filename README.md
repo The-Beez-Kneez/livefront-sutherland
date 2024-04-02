@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Sure, here's a basic template for your project's README.md file:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```markdown
+# Livefront Sutherland Project
 
-## Available Scripts
+Welcome to the Livefront Sutherland project! This project is a React application that allows users to explore different genres and read random stories associated with those genres.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Genre Exploration**: Users can browse through a list of genres and select one to explore further.
+- **Random Stories**: Each genre page displays a random story associated with that genre.
+- **Navigation**: Users can easily navigate between genres and stories using links provided in the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- React Router
+- Axios
 
-### `npm test`
+## API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project utilizes the [Binary Jazz Genrenator API](https://github.com/BinaryJazz/genrenator) to fetch genres and stories dynamically.
 
-### `npm run build`
+## Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run this project locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install dependencies.
+4. Run `npm start` to start the development server.
+5. Open your web browser and navigate to `http://localhost:3000` to view the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+The project structure is organized as follows:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `src/`: Contains the source code for the project.
+  - `components/`: Contains React components used in the application.
+  - `GenreFinder.jsx`: Main component for browsing genres and stories.
+  - `StoryDetail.jsx`: Component for displaying story details.
+  - `GenreFinder.css`: CSS file for styling GenreFinder component.
+  - `StoryDetail.css`: CSS file for styling StoryDetail component.
+  - `App.css`: Global CSS styles.
+- `public/`: Contains public assets and HTML template.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Unit tests for components can be found in the `src/__tests__/` directory. Tests can be run using the `npm test` command.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is not licensed but is a private project. The user does not permit any copying or redistribution of this project without their expressly given persmission.
+```
