@@ -1,17 +1,43 @@
 /* StoryDetail.css */
 .story-detail-container {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .story-title {
   font-size: 36px;
   font-weight: bold;
   color: #C8A2C8; /* Light Plum */
+  margin-bottom: 20px;
 }
 
 .story-content {
   font-size: 20px;
+  color: #a78ca7;
+  line-height: 1.6; 
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
   margin-top: 20px;
-  color: #A681A6; /* Medium Plum */
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.story-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

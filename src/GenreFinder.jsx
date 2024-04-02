@@ -34,7 +34,7 @@ const GenreFinder = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<div className="container">
-          <h1 className="title">Choose a Genre:</h1>
+          <h1 className="title">What Should We Listen To?</h1>
           <ul className="genre-list">
             {genres.map((genre, index) => (
               <li key={index} className="genre-item">

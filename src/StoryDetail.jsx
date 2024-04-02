@@ -7,9 +7,9 @@ const StoryDetail = ({ stories }) => {
 
   return (
     <div className="story-detail-container">
-      <h1 className="story-title">Story Detail</h1>
+      <h1 className="story-title">Well I Think...</h1>
       <div className="story-content">{randomStory}</div>
-      <Link to="/" className="link">Back to Genres</Link>
+      <Link to="/" className="link">Anything Else?</Link>
     </div>
   );
 };

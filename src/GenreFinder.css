@@ -1,7 +1,10 @@
-/* GenreFinder.css */
 body {
   background-color: #2B1B34; /* Dark Plum */
   color: #FFFFFF; /* White */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -13,12 +16,19 @@ body {
   font-size: 48px;
   font-weight: bold;
   color: #C8A2C8; /* Light Plum */
+  margin-bottom: 20px;
 }
 
-.genre {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #A681A6; /* Medium Plum */
+.genre-list {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genre-item {
+  margin: 10px;
 }
 
 .link {
