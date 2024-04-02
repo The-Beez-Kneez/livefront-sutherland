@@ -1,5 +1,3 @@
-Sure, here's a basic template for your project's README.md file:
-
 ```markdown
 # Livefront Sutherland Project
 
