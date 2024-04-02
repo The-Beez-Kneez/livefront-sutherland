@@ -1,16 +1,15 @@
 import React from 'react';
 import './StoryDetail.css';
+import { Link } from 'react-router-dom';
 
 const StoryDetail = ({ stories }) => {
-
-  console.log(stories);
-
   const randomStory = stories[Math.floor(Math.random() * stories.length)];
 
   return (
     <div className="story-detail-container">
       <h1 className="story-title">Story Detail</h1>
       <div className="story-content">{randomStory}</div>
+      <Link to="/" className="link">Back to Genres</Link>
     </div>
   );
 };
