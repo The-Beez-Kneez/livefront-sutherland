@@ -1,7 +1,11 @@
 ```markdown
 # Music Snob
 
-Welcome to Music Snob! This project is a React application that allows users to explore different genres and read random stories associated with those genres.
+Welcome to Music Snob! 
+
+We all know that one person, who seems to think their taste in niche music surpasses all others.
+
+This project is a React application that allows users to explore different genres and Music Snob will voice their opinion on your choice.
 
 ## Features
 
